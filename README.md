@@ -1,8 +1,9 @@
-# React + Vite
+# THIS IS REACT LEARNING REPO
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# IN FETCH DATA API FOLDER -> I JUST IMPLEMENTED HOW WE CAN FETCH DATA FROM AN API WITH THE HELP OF USE_EFFECT
 
-Currently, two official plugins are available:
+# HOC -> HOW TO USE HIGHER ORDER COMPONENT 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# FRONT_PAGE -> WHEN YOU ARE CLONING THE REPO YOU CAN SEE SOME BUTTONS THAT IS FROM THE FRONT PAGE FILE , WHEN YOU ARE CLICKING A BUTTON FROM THE FRONT PAGE THAT WILL NAVIGATE TO ANOTHER PAGE RELATED TO THE BUTTON NAME
+
+# ACCORDION -> I CREATED AN ACCORDION USING USE CONTEXT SOMETHING FETCHING FROM AN API AND I WRAPPED INTO THE CONTEXT 
