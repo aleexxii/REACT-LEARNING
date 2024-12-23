@@ -1,27 +1,27 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import ThemeBtn from "../themeButton/ThemeBtn";
 
 const FrontPage = () => {
-  const style = "bg-lime-400 border-2 rounded p-2";
+  const style = "bg-lime-400 border-2 rounded p-2 font-semibold font-mono";
+
   return (
     <div className="h-16 bg-orange-300 flex justify-between p-4 gap-3">
-      <Link to="/accordian" className="font-semibold font-mono">
-        <span className={style}> Accordian </span>
+      <Link to="/accordian">
+        <button className={style}> Accordian </button>
       </Link>
-      <Link to="/parent1" className="font-semibold font-mono">
-        <span className={style}>parent1 </span>
+      <Link to="/parent1">
+        <button className={style}>parent1 </button>
       </Link>
-      <Link to="/parent2" className="font-semibold font-mono">
-        {" "}
-        <span className={style}> Parent2 </span>
+      <Link to="/parent2">
+        <button className={style}> Parent2 </button>
       </Link>
-      <Link to="/heading" className="font-semibold font-mono">
-        <span className={style}> Heading </span>
+      <Link to="/heading">
+        <button className={style}> Heading </button>
       </Link>
-      <Link to="/paragraph" className="font-semibold font-mono">
-        {" "}
-        <span className={style}> Paragraph </span>
+      <Link to="/paragraph">
+        <button className={style}> Paragraph </button>
       </Link>
+      <ThemeBtn />
     </div>
   );
 };
