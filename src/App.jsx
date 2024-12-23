@@ -14,9 +14,9 @@ function App() {
       <ThemeProvider>
         <BrowserRouter>
           <Context>
+                <FrontPage />
             <div>
               <Routes>
-                <Route path="/" element={<FrontPage />} />
                 <Route path="/accordian" element={<AccordianContainer />} />
                 <Route path="/parent1" element={<ParentComponent />} />
                 <Route path="/heading" element={<WrappedHeading />} />
