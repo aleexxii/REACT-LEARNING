@@ -1,17 +1,29 @@
-import { Link } from "react-router-dom";
 import AccordianName from "./AccordianName";
 import { apiDataContext } from "./AccordianContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 function AccordianContainer() {
+  const {data, isLoading, error } = useContext(apiDataContext);
 
-  const data = useContext(apiDataContext)
+  if(isLoading){
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <h1 className="text-xl font-semibold">Loading...</h1>
+      </div>
+    )
+  }
 
-  console.log("Data in container:", data);
+  if(error){
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <h1 className="text-xl font-semibold text-red-500">Error: {error}</h1>
+      </div>
+    );
+  }
 
   return (
-     <div>
-      {data.map((item) => (
+    <div className="container mx-auto p-4">
+      {data?.map((item) => (
         <AccordianName key={item.id} values={item} />
       ))}
     </div>

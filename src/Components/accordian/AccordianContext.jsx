@@ -1,20 +1,42 @@
-import { createContext, useEffect, useState } from "react";
-import AccordianName from "./AccordianName";
+import { createContext, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export const apiDataContext = createContext();
 
-function Context({children}) {
+function Context({ children }) {
   const [data, setData] = useState([]);
+  const [isLoading, setLoading] = useState(true);
+  const [error, setError] = useState(null)
+  const location = useLocation()
 
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts/1/comments")
-      .then((response) => response.json())
-      .then((res) => setData(res))
-      .catch((err) => console.log("Fetching Error : ", err));
-  }, []);
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/posts/1/comments"
+        );
+
+        if(!response.ok) throw new Error ("Network response was not ok")
+
+        const result = await response.json();
+        
+      } catch (error) {
+        console.log("Error while fetching data : ", error);
+        setError(error.message)
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    const contextValue = {
+      data,
+      isLoading,
+    }
+    
+
   return (
     <div>
-      <apiDataContext.Provider value={data}>
+      <apiDataContext.Provider value={contextValue}>
         {children}
       </apiDataContext.Provider>
     </div>
