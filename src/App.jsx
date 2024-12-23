@@ -4,7 +4,7 @@ import ParentComponent from "./Components/PassingToChild";
 import { WrappedHeading } from "./Components/HeadingComponent";
 import { WrappedParagraph } from "./Components/ParagraphComponent";
 import AccordianContainer from "./Components/accordian/AccordianContainer";
-import FrontPage from "./Components/navbar/Navbar";
+import Navbar from "./Components/navbar/Navbar";
 import Context from "./Components/accordian/AccordianContext";
 import { ThemeProvider } from "./Components/context/ThemeContext";
 import Home from "./Components/home/Home";
@@ -15,8 +15,8 @@ function App() {
       <ThemeProvider>
         <BrowserRouter>
           <Context>
+            <Navbar />
             <div>
-                <FrontPage />
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/accordian" element={<AccordianContainer />} />
