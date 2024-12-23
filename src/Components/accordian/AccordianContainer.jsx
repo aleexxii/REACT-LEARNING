@@ -1,6 +1,6 @@
 import AccordianName from "./AccordianName";
 import { apiDataContext } from "./AccordianContext";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 function AccordianContainer() {
   const {data, isLoading, error } = useContext(apiDataContext);
