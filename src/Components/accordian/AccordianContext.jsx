@@ -1,5 +1,4 @@
 import { createContext, useState } from "react";
-import { useLocation } from "react-router-dom";
 
 export const apiDataContext = createContext();
 
@@ -7,7 +6,6 @@ function Context({ children }) {
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(null)
-  const location = useLocation()
 
     const fetchData = async () => {
       setLoading(true);
@@ -19,7 +17,7 @@ function Context({ children }) {
         if(!response.ok) throw new Error ("Network response was not ok")
 
         const result = await response.json();
-        
+        setData(result)
       } catch (error) {
         console.log("Error while fetching data : ", error);
         setError(error.message)
@@ -31,6 +29,7 @@ function Context({ children }) {
     const contextValue = {
       data,
       isLoading,
+      refetch : fetchData
     }
     
 
