@@ -1,7 +1,9 @@
 import card_img from "../../assets/Home/home_card.png";
+
 const Home = () => {
+    
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+    <div className="min-h-screen flex items-center justify-center p-4">
       <div className="max-w-sm bg-white rounded-lg shadow-lg overflow-hidden">
         <img
           src={card_img}
