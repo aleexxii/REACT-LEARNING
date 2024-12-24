@@ -1,42 +1,53 @@
-import { useEffect } from "react";
+import { Moon, Sun  } from "lucide-react";
 import useTheme from "../context/ThemeContext";
 
-
 const ThemeBtn = () => {
+  const { themeMode, darkTheme, lightTheme } = useTheme();
 
-    const {themeMode, darkTheme, lightTheme} = useTheme()
-
-
-    const onChangeBtn = (e) => {
-        const darkModeStatus = e.currentTarget.checked
-        if(darkModeStatus){
-          darkTheme()
-        }else{
-          lightTheme()
-        }
-      }
-
-      useEffect(() => {
-        document.querySelector('html').classList.remove('dark', 'light')
-        document.querySelector('html').classList.add(themeMode)
-      },[themeMode])
+  const onChangeBtn = (e) => {
+    const themeStatus = e.currentTarget.checked;
+    if (themeStatus) {
+      darkTheme();
+    } else {
+      lightTheme();
+    }
+  };
 
   return (
-    <div>
-      <label className="relative inline-flex items-center cursor-pointer">
-        <input
-          type="checkbox"
-          value=""
-          className="sr-only peer"
-          onChange={onChangeBtn}
-          checked={themeMode === "dark"}
+    <label className="relative inline-flex items-center cursor-pointer">
+      <input
+        type="checkbox"
+        value=""
+        className="sr-only peer"
+        onChange={onChangeBtn}
+        checked={themeMode === "dark"}
+      />
+      <div
+        className={`w-16 h-8  rounded-full peer-focus:ring-4 peer-focus:ring-gray-400 ${
+          themeMode == "dark" ? "dark:bg-blue-950" : "dark:bg-gray-100"
+        }`}
+      >
+        <Sun
+          size={18}
+          className={`absolute fill-yellow-400 top-2 left-2 text-orange-400 transition-opacity duration-300 ${
+            themeMode == "dark" ? "opacity-100" : "opacity-0"
+          }`}
         />
-        <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-        <span className="ml-3 text-sm font-medium text-gray-900">
-          Dark Mode
-        </span>
-      </label>
-    </div>
+
+        <Moon
+          size={18}
+          className={`text-gray-500 dark:text-indigo-500 absolute top-2 right-2 fill-gray-300
+             transition-opacity duration-300 ${
+               themeMode == "light" ? "opacity-100" : "opacity-0"
+             }`}
+        />
+      </div>
+      <div
+        className={`absolute top-0.5 left-0.5 w-7 h-7 bg-white border border-gray-300 rounded-full transition-transform duration-300 transform ${
+          themeMode == "dark" ? "translate-x-8" : "translate-x-0"
+        }`}
+      ></div>
+    </label>
   );
 };
 
