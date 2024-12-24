@@ -1,7 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
 .dark {
-  background-color: black;
+  background-color: #1B1A19;
+  color: #fff;
 }
 
 .light {
   background-color: white;
+  color: #000;
 }
