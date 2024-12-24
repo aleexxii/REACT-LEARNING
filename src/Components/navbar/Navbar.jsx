@@ -34,6 +34,9 @@ const Navbar = () => {
       <Link to="/paragraph">
         <button className={style}> Paragraph </button>
       </Link>
+      <Link to='/use-memo' >
+      <button className={style}> Memo Usage </button>
+      </Link>
       <ThemeBtn />
     </div>
   );
