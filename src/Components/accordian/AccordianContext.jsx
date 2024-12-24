@@ -20,7 +20,6 @@ function Context({ children }) {
       } catch (err) {
         console.log("Error while fetching data : ", err);
       } finally {
-        console.log('loading set to false');
         setLoading(false);
       }
     };
