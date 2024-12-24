@@ -9,18 +9,19 @@ const Navbar = () => {
   const style = "bg-lime-400 border-2 rounded p-2 font-semibold font-mono";
   const { refetch } = useContext(apiDataContext);
 
-  const handleGetFetch = async () => {
-    await refetch();
-    /* Link is not suppported asynchronous operations so we need to use Navigate */
-    navigate("/accordian");
-  };
+  // const handleGetFetch = async () => {
+  //   await refetch();
+  //   /* Link is not suppported asynchronous operations so we need to use Navigate */
+  //   navigate("/accordian");
+  // };
 
   return (
     <div className="h-16 bg-orange-300 flex justify-between p-4 gap-3">
-      <button onClick={handleGetFetch} className={style}>
+      <Link to='/accordian'>
+      <button  className={style}>
         Accordian
       </button>
-
+      </Link>
       <Link to="/parent1">
         <button className={style}>parent1 </button>
       </Link>

@@ -1,11 +1,10 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const apiDataContext = createContext();
 
 function Context({ children }) {
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(true);
-  const [error, setError] = useState(null)
 
     const fetchData = async () => {
       setLoading(true);
@@ -18,10 +17,10 @@ function Context({ children }) {
 
         const result = await response.json();
         setData(result)
-      } catch (error) {
-        console.log("Error while fetching data : ", error);
-        setError(error.message)
+      } catch (err) {
+        console.log("Error while fetching data : ", err);
       } finally {
+        console.log('loading set to false');
         setLoading(false);
       }
     };
@@ -31,6 +30,12 @@ function Context({ children }) {
       isLoading,
       refetch : fetchData
     }
+
+    useEffect(() => {
+      if(data.length == 0){
+        fetchData()
+      }
+    },[data])
     
 
   return (

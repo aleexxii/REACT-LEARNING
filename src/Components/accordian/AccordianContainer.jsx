@@ -3,7 +3,7 @@ import { apiDataContext } from "./AccordianContext";
 import { useContext } from "react";
 
 function AccordianContainer() {
-  const {data, isLoading, error } = useContext(apiDataContext);
+  const {data, isLoading } = useContext(apiDataContext);
 
   if(isLoading){
     return (
@@ -11,14 +11,6 @@ function AccordianContainer() {
         <h1 className="text-xl font-semibold">Loading...</h1>
       </div>
     )
-  }
-
-  if(error){
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <h1 className="text-xl font-semibold text-red-500">Error: {error}</h1>
-      </div>
-    );
   }
 
   return (
