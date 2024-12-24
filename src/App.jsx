@@ -8,6 +8,7 @@ import Navbar from "./Components/navbar/Navbar";
 import Context from "./Components/accordian/AccordianContext";
 import { ThemeProvider } from "./Components/context/ThemeContext";
 import Home from "./Components/home/Home";
+import MemoUsage from "./Components/memoUsage/MemoUsage";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
                 <Route path="/heading" element={<WrappedHeading />} />
                 <Route path="/parent2" element={<ParentComponent />} />
                 <Route path="/paragraph" element={<WrappedParagraph />} />
+                <Route path='/use-memo' element={<MemoUsage />} />
               </Routes>
             </div>
           </Context>
