@@ -8,7 +8,7 @@ import Navbar from "./Components/navbar/Navbar";
 import Context from "./Components/accordian/AccordianContext";
 import { ThemeProvider } from "./Components/context/ThemeContext";
 import Home from "./Components/home/Home";
-import MemoUsage from "./Components/memoUsage/MemoUsage";
+import MemoUsage from "./Components/memoUsage/AdditionWithoutMemo";
 import ReactFiber from "./Components/reactFiber/ReactFiber";
 
 function App() {

@@ -1,17 +1,16 @@
 import { useState } from "react";
-import { findNthPrime } from "./helper";
-import MemoComponent from "./MemoComponent";
+import AdditionWithMemo from "./AdditionWithMemo";
 
-const MemoUsage = () => {
-  const [inputValue, setInputValue] = useState(0);
+const Addition = () => {
+  const [value1, setValue1] = useState(0);
+  const [value2, setValue2] = useState(0);
   const [inputResult, setInputResult] = useState(0);
-  const [timeTaken, setTimeTaken] = useState(0);
+
 
   const handleClick = () => {
-    const starTime = performance.now();
-    const result = findNthPrime(inputValue);
-    const endTime = performance.now();
-    setTimeTaken((endTime - starTime) / 1000);
+
+    const result = Number(value1) + Number(value2)
+
     setInputResult(result);
   };
 
@@ -26,35 +25,49 @@ const MemoUsage = () => {
           </h1>
         </div>
         <div className="pt-6">
-          <span className="font-extrabold cursor-pointer">Time Taken : </span>
-          <span className=" cursor-pointer">
-            {timeTaken.toFixed(4)} seconds
-          </span>
           <div className="flex justify-center">
             <p className="mt-3 font-bold text-xs text-violet-400">
-              Add 7 digit number then it will make sense
+              It's a addition program after inputing two valus click on result button then
+              opern your console and press result button again and again 
+              you can see that how many times your component re-renders
             </p>
           </div>
           <div className="mt-4">
+            <div>
             <label
               htmlFor="calculating"
               className="font-extrabold cursor-pointer"
             >
-              Enter digits :
+              Enter Fist num :
             </label>
             <input
               className="text-black ml-3"
               type="number"
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
+              value={value1}
+              onChange={(e) => setValue1(e.target.value)}
             />
+            </div>
+            <div>
+            <label
+              htmlFor="calculating"
+              className="font-extrabold cursor-pointer"
+            >
+              Enter second num :
+            </label>
+            <input
+              className="text-black ml-3"
+              type="number"
+              value={value2}
+              onChange={(e) => setValue2(e.target.value)}
+            />
+            </div>
           </div>
           <div className="flex justify-center m-4 ">
             <button
               className="border-2 rounded-md font-bold hover:bg-cyan-800 border-slate-800 p-1"
               onClick={handleClick}
             >
-              Find nth_Prime
+              Result
             </button>
           </div>
           <span className="font-extrabold cursor-pointer">Output : </span>
@@ -68,10 +81,10 @@ const MemoUsage = () => {
         </div>
       </div>
 
-        <MemoComponent />
+        <AdditionWithMemo />
 
     </div>
   );
 };
 
-export default MemoUsage;
+export default Addition;
