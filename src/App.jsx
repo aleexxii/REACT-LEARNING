@@ -9,6 +9,7 @@ import Context from "./Components/accordian/AccordianContext";
 import { ThemeProvider } from "./Components/context/ThemeContext";
 import Home from "./Components/home/Home";
 import MemoUsage from "./Components/memoUsage/MemoUsage";
+import ReactFiber from "./Components/reactFiber/ReactFiber";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
                 <Route path="/parent2" element={<ParentComponent />} />
                 <Route path="/paragraph" element={<WrappedParagraph />} />
                 <Route path='/use-memo' element={<MemoUsage />} />
+                <Route path="/react-fiber" element={<ReactFiber />} />
               </Routes>
             </div>
           </Context>

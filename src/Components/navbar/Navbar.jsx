@@ -30,6 +30,9 @@ const Navbar = () => {
       <Link to='/use-memo' >
       <button className={style}> Memo Usage </button>
       </Link>
+      <Link to='/react-fiber'>
+      <button className={style}> React Fiber </button>
+      </Link>
       <ThemeBtn />
     </div>
   );
