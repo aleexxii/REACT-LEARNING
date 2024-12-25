@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AdditionWithMemo from "./AdditionWithMemo";
+import ReactMemo from "./ReactMemo";
 
 const Addition = () => {
   const [value1, setValue1] = useState(0);
@@ -82,7 +83,7 @@ const Addition = () => {
       </div>
 
         <AdditionWithMemo />
-
+        <ReactMemo />
     </div>
   );
 };
