@@ -8,9 +8,9 @@ import Navbar from "./Components/navbar/Navbar";
 import Context from "./Components/accordian/AccordianContext";
 import { ThemeProvider } from "./Components/context/ThemeContext";
 import Home from "./Components/home/Home";
-import MemoUsage from "./Components/memoUsage/WithoutUseMemo";
 import ReactFiber from "./Components/reactFiber/ReactFiber";
 import Todo from "./pages/todo/Todo";
+import Memo from "./pages/memo/Memo";
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
                 <Route path="/heading" element={<WrappedHeading />} />
                 <Route path="/parent2" element={<ParentComponent />} />
                 <Route path="/paragraph" element={<WrappedParagraph />} />
-                <Route path='/use-memo' element={<MemoUsage />} />
+                <Route path='/use-memo' element={<Memo />} />
                 <Route path="/react-fiber" element={<ReactFiber />} />
                 <Route path="/todo" element={<Todo />} />
               </Routes>

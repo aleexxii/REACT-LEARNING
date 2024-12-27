@@ -1,6 +1,4 @@
 import { useState } from "react";
-import AdditionWithMemo from "./WithUseMemo";
-import ReactMemo from "./ReactMemo";
 import { products } from "./selectedItem";
 
 
@@ -25,7 +23,7 @@ const WithoutUseMemo = () => {
   }
 
   return (
-    <div className="flex justify-items-center mt-8 justify-evenly">
+    
       <div className={`h-80 w-80 ${bgColor} rounded-xl justify-items-center`}>
         <div>
           <h1 className="font-extrabold text-indigo-300 text-xl">
@@ -67,10 +65,6 @@ const WithoutUseMemo = () => {
           </span>
         </div>
       </div>
-
-        <AdditionWithMemo />
-        <ReactMemo />
-    </div>
   );
 };
 
