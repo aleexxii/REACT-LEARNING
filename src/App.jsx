@@ -10,6 +10,7 @@ import { ThemeProvider } from "./Components/context/ThemeContext";
 import Home from "./Components/home/Home";
 import MemoUsage from "./Components/memoUsage/WithoutUseMemo";
 import ReactFiber from "./Components/reactFiber/ReactFiber";
+import Todo from "./pages/todo/Todo";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/paragraph" element={<WrappedParagraph />} />
                 <Route path='/use-memo' element={<MemoUsage />} />
                 <Route path="/react-fiber" element={<ReactFiber />} />
+                <Route path="/todo" element={<Todo />} />
               </Routes>
             </div>
           </Context>
