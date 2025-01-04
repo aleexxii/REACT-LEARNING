@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom";
 import ThemeBtn from "../themeButton/ThemeBtn";
-import { apiDataContext } from "../accordian/AccordianContext";
-import { useContext } from "react";
 
 const Navbar = () => {
   
   const style = "bg-lime-400 border-2 rounded p-2 font-semibold font-mono";
-  const { refetch } = useContext(apiDataContext);
 
   return (
     <div className="h-16 bg-orange-300 flex justify-between p-4 gap-3">
