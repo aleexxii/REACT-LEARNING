@@ -1,4 +1,4 @@
-import React, { act, useReducer } from 'react'
+import React, { useReducer } from 'react'
 import AddTask from './AddTask'
 import { initialTasks } from './dummyData'
 import TaskList from './TaskList'
