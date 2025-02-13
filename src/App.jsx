@@ -11,6 +11,7 @@ import Home from "./Components/home/Home";
 import ReactFiber from "./Components/reactFiber/ReactFiber";
 import Todo from "./pages/todo/Todo";
 import Memo from "./pages/memo/Memo";
+import Parent from "./Components/siblings/Parent";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
                 <Route path='/use-memo' element={<Memo />} />
                 <Route path="/react-fiber" element={<ReactFiber />} />
                 <Route path="/todo" element={<Todo />} />
+                <Route path="/sibling" element={<Parent />} />
               </Routes>
             </div>
           </Context>

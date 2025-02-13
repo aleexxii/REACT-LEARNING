@@ -35,6 +35,11 @@ const Navbar = () => {
         Todo
       </button>
       </Link>
+      <Link to='/sibling'>
+      <button className={style}>
+        Sibling
+      </button>
+      </Link>
       <ThemeBtn />
     </div>
   );
