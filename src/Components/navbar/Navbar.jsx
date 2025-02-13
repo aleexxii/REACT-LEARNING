@@ -40,6 +40,11 @@ const Navbar = () => {
         Sibling
       </button>
       </Link>
+      <Link to='/custom-hook'>
+      <button className={style}>
+        Custom Hook
+      </button>
+      </Link>
       <ThemeBtn />
     </div>
   );
